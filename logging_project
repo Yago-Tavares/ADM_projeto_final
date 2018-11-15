@@ -1,0 +1,12 @@
+#!/bin/sh
+
+while true
+do
+	read -p ">" entrada
+
+        #/usr/bin/time -f "%e" ls 
+	_time="$( TIMEFORMAT='%lU';time $entrada 2>&1 1>/dev/null )"
+	echo $entrada $_time >> log.txt
+done
+
+
