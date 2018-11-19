@@ -1,0 +1,5 @@
+0.00 0.00 0.00 ls data
+0.00 0.00 0.00 cat ./data/log-11-2018.log
+Command exited with non-zero status 2
+0.02 0.00 0.00 ls log
+0.00 0.00 0.00 cat ./data/log-11-2018.log
