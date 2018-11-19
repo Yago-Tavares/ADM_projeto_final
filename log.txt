@@ -5,3 +5,11 @@ sleep 2 2.00
 cat log.txt 0.00
 ls 0.00
 cat log.txt 0.00
+ls 0.00 0
+sleep 2 2.00 0
+cat log.txt 0.00 0
+0.00 ?u 0 ls
+0.00 ?u 0 cat log.txt
+0.00 0.00 0.00 ls
+2.00 0.00 0.00 sleep 2
+0.00 0.00 0.00 cat log.txt
