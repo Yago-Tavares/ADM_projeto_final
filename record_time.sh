@@ -1,7 +1,16 @@
 #!/bin/sh
 
-MONTH=$(date +%m-%Y)
-SUM_USER=$(awk '{sum+=$2} END {print sum}' log-$MONTH.txt)
-SUM_SYS=$(awk '{sum+=$3} END {print sum}' log-$MONTH.txt)
+if [ $1 ]
+then
+  MONTH=$1
+else
+  MONTH=$(date +%m-%Y)
+fi
 
-echo $SUM_USER $SUM_SYS
+SUM_USER=$(egrep "[0-9]+.[0-9]+ [0-9]+.[0-9]+ [0-9]+.[0-9]+" data/log-$MONTH.log | awk '{sum+=$2} END {print sum}')
+SUM_SYS=$(egrep "[0-9]+.[0-9]+ [0-9]+.[0-9]+ [0-9]+.[0-9]+" data/log-$MONTH.log | awk '{sum+=$3} END {print sum}')
+
+echo 'Systime =' $SUM_SYS 'Usertime =' $SUM_USER
+echo
+echo 'Command used histogram'
+egrep "[0-9]+.[0-9]+ [0-9]+.[0-9]+ [0-9]+.[0-9]+" data/log-$MONTH.log | awk '{print $4}' | sort -n | uniq -c | awk '{print $2, $1}'
