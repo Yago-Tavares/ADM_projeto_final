@@ -7,3 +7,4 @@ Command exited with non-zero status 2
 Command exited with non-zero status 100
 1.31 1.24 0.07 apt-get update
 0.00 0.00 0.00 cat data/log-11-2018.log
+0.00 0.00 0.00 ls
